@@ -59,7 +59,16 @@ Body Example:
   "validUrl": false
 }
 ```
-- **Get Stadistics**: Make a GET request to `/{shortCode}/data`
+- **Get URL Stadistics**: Make a GET request to `/{shortCode}/data`, Number of clicks is returned.
+
+### Accessing Metrics
+
+To access application metrics, navigate to the Actuator endpoint `/actuator/metrics` in your browser or use a tool like cURL:
+
+```bash
+curl http://localhost:8080/actuator/metrics
+```
+You can also search for topics `/actuator/metrics/topic.name` to see the its values. See App constants to get the topics names.
 
 ## License
 
