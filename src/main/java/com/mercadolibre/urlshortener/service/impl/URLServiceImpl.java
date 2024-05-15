@@ -5,6 +5,7 @@ import com.mercadolibre.urlshortener.domain.ShortURL;
 import com.mercadolibre.urlshortener.dto.ShortURLDto;
 import com.mercadolibre.urlshortener.repository.ShortURLRepository;
 import com.mercadolibre.urlshortener.service.URLService;
+import io.micrometer.common.util.StringUtils;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,9 @@ public class URLServiceImpl implements URLService {
             var existingUrl = savedUrl.get();
             if (Objects.nonNull(updateDto.getValidUrl())) {
                 existingUrl.setValidUrl(updateDto.getValidUrl());
+            }
+            if (StringUtils.isNotBlank(updateDto.getOriginalUrl())) {
+                existingUrl.setOriginalUrl(updateDto.getOriginalUrl());
             }
             // Convert saved or updated entity back to DTO and return
             return ShortURLConverter.toDto(shortURLRepository.save(existingUrl));

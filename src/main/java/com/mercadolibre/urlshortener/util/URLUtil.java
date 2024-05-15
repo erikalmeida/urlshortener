@@ -20,7 +20,8 @@ public class URLUtil {
     }
 
     public static boolean isValidRequestUpdate(ShortURLDto request) {
-        return Objects.nonNull(request) && Objects.nonNull(request.getValidUrl());
+        return Objects.nonNull(request) &&
+                ((Objects.nonNull(request.getValidUrl())) || (StringUtils.isNotBlank(request.getOriginalUrl())));
     }
 
     public static boolean isWellFormedUrl(String urlString) {

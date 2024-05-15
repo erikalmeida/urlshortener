@@ -8,7 +8,7 @@ Java-based web application built with Spring Boot that allows users to shorten l
 
 - **URL Shortening**: Convert long URLs into short, easy-to-share links.
 - **URL Redirection**: Redirect short links to their original URLs.
-- **URL Management**: Enable, disable URLs.
+- **URL Management**: Enable, disable URLs, change redirection URL .
 - **URL Stadistics**: Get URLs click count data.  
 
 ## Technologies Used
@@ -56,11 +56,12 @@ Body example:
 }
 ```
 - **Redirect a URL**: Make a GET request to `/{shortCode}`, or the url provided as a response on creation.
-- **Manage URLs**: Enable, disable through a PUT request to `/{shortCode}`
+- **Manage URLs**: Enable, disable and change redirection URL through a PUT request to `/{shortCode}`
 Body Example:
 ```json
 {
-  "validUrl": false
+  "validUrl": false,
+  "originalUrl": "www.updated.com"
 }
 ```
 - **Get URL Stadistics**: Make a GET request to `/{shortCode}/data`, Number of clicks is returned.

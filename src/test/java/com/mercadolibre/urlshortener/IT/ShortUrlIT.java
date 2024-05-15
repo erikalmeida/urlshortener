@@ -48,6 +48,7 @@ public class ShortUrlIT {
 
         // Update the original URL of the ShortURL
         ShortURLDto updatedShortURLDto = ShortURLDto.builder()
+                .originalUrl("updated.com")
                 .validUrl(false).build();
         String updateRequestBody = objectMapper.writeValueAsString(updatedShortURLDto);
 
@@ -61,6 +62,7 @@ public class ShortUrlIT {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.validUrl", is(updatedShortURLDto.getValidUrl())))
+                .andExpect(jsonPath("$.originalUrl", is(updatedShortURLDto.getOriginalUrl())))
                 .andExpect(jsonPath("$.clicks", is(0)));
     }
 

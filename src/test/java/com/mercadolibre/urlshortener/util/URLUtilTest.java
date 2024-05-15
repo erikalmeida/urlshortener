@@ -32,7 +32,8 @@ class URLUtilTest {
         return Stream.of(
                 Arguments.of(null, false),
                 Arguments.of(ShortURLDto.builder().build(), false),
-                Arguments.of(ShortURLDto.builder().validUrl(true).build(), true)
+                Arguments.of(ShortURLDto.builder().validUrl(true).build(), true),
+                Arguments.of(ShortURLDto.builder().originalUrl("test").build(), true)
         );
     }
 

@@ -68,8 +68,8 @@ class URLServiceImplTest {
     private static Stream<Arguments> provideUpdateShortUrlTestData() {
         ShortURLDto validUpdateDto = ShortURLDto.builder().validUrl(true).build();
         ShortURL existingUrl = ShortURL.builder().originalUrl("https://www.example.com").shortCode("abc123").validUrl(true).build();
-        ShortURL updatedUrl = ShortURL.builder().originalUrl("https://www.example.com").shortCode("abc123").validUrl(true).build();
-        ShortURLDto expectedDto = ShortURLDto.builder().originalUrl("https://www.example.com").shortCode("abc123").validUrl(true).build();
+        ShortURL updatedUrl = ShortURL.builder().originalUrl("https://www.Updatedexample.com").shortCode("abc123").validUrl(true).build();
+        ShortURLDto expectedDto = ShortURLDto.builder().originalUrl("https://www.Updatedexample.com").shortCode("abc123").validUrl(true).build();
 
         return Stream.of(
                 Arguments.of("abc123", validUpdateDto, existingUrl, updatedUrl, expectedDto),

@@ -92,7 +92,7 @@ class URLControllerTest {
         return Stream.of(
                 Arguments.of("abc123", false, HttpStatus.NOT_FOUND),
                 Arguments.of("abc123", true, HttpStatus.NOT_FOUND),
-                Arguments.of("invalidCode", null, HttpStatus.BAD_REQUEST),
+                Arguments.of("invalidCode", null, HttpStatus.NOT_FOUND),
                 Arguments.of("", true, HttpStatus.BAD_REQUEST)
         );
     }
@@ -103,6 +103,7 @@ class URLControllerTest {
         // Mocking ShortURLDto based on isValidRequest
         ShortURLDto updateDTO = mock(ShortURLDto.class);
         when(updateDTO.getValidUrl()).thenReturn(isValidRequest);
+        when(updateDTO.getOriginalUrl()).thenReturn("updatedurl.com");
 
         ResponseEntity<ShortURLDto> responseEntity = urlController.updateShortURL(shortCode, updateDTO);
 
