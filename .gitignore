@@ -1,0 +1,76 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Maven build directory
+/target/
+
+# Ignore Maven wrapper files
+/.mvn/
+mvnw
+mvnw.cmd
+
+# Ignore IntelliJ IDEA files (if you're using IntelliJ IDEA)
+.idea/
+
+# Ignore Eclipse files (if you're using Eclipse)
+.settings/
+
+# Ignore any compiled binaries or archives
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+
+# Ignore any generated documentation
+/doc/
+
+# Ignore any generated files from IDEs
+*.idea
+*.classpath
+*.project
+*.settings
+
+# Ignore any generated files from editors
+*.swp
+*~
+
+# Ignore any generated OS-specific files
+Thumbs.db
