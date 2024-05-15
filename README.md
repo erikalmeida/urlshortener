@@ -30,7 +30,11 @@ Micrometer is integrated into the application to collect various metrics and mon
 ## Setup
 
 1. **Clone the Repository**: Clone this repository to your local machine.
-2. **Configure MongoDB**: Ensure you have a MongoDB instance available. Update connection details in the application configuration.
+2. **Configure MongoDB**: Ensure you have a MongoDB instance available. Set an environment variable named `MONGODB_URI` with your connection URI.
+For example:
+```bash 
+export MONGODB_URI="mongodb+srv://<username>:<password>@clusterml.dlyvvcf.mongodb.net/?retryWrites=true&w=majority&appName=clusterML"
+```
 3. **Set Up Environment Variable**: Set an environment variable named `BASE_URL_ML` with the base URL of your application's domain. This variable will be used to construct functional links in the application. 
 For example: 
 ```bash 
